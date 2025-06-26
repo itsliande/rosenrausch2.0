@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Zitate & Sprüche - Rosenrausch | Die besten Livestream-Momente</title>
+    <meta name="description" content="Die lustigsten und denkwürdigsten Zitate und Sprüche aus Rosenrausch Livestreams. Community-Highlights und unvergessliche Momente.">
+    <meta name="keywords" content="Rosenrausch Zitate, Livestream Sprüche, Community Highlights, Lustige Momente">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rosenrausch.xyz/quotes">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Zitate & Sprüche - Rosenrausch">
+    <meta property="og:description" content="Die lustigsten und denkwürdigsten Zitate aus Rosenrausch Livestreams.">
+    <meta property="og:image" content="https://rosenrausch.xyz/profile.jpg">
+    <meta property="og:url" content="https://rosenrausch.xyz/quotes">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Zitate & Sprüche - Rosenrausch">
+    <meta name="twitter:description" content="Die lustigsten und denkwürdigsten Zitate aus Rosenrausch Livestreams.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/rosenrausch-performer.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/rosenrausch-performer.svg">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/quotes.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Rosenrausch Zitate & Sprüche",
+        "description": "Sammlung der besten Zitate und Sprüche aus Rosenrausch Livestreams",
+        "url": "https://rosenrausch.xyz/quotes"
+    }
+    </script>
+</head>
+<body>
+    <!-- Rosen-Dekoration -->
+    <div class="rose-decoration" style="left: 30%; animation-delay: 5s;">🌹</div>
+    <div class="rose-decoration" style="left: 70%; animation-delay: 11s;">🌸</div>
+    <div class="rose-decoration" style="left: 50%; animation-delay: 17s;">🌺</div>
+
+    <nav class="navbar">
+        <a href="/" class="nav-item">Soziale Medien</a>
+        <a href="/minecraft" class="nav-item">Minecraft & Discord</a>
+        <a href="/termine" class="nav-item">Termine</a>
+        <a href="/team" class="nav-item">Unser Team</a>
+        <a href="/quotes" class="nav-item active">Zitate</a>
+    </nav>
+    
+    <div class="quotes-container">
+        <div class="quotes-header">
+            <img src="profile.jpg" alt="Rosenrausch Profilbild" class="profile-img">
+            <h1 class="page-title">ZITATE & SPRÜCHE</h1>
+            <p class="page-subtitle">Die besten Momente aus unseren Livestreams</p>
+        </div>
+        
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="quote-search" placeholder="Zitate durchsuchen...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-list"></i>
+                    Alle
+                </button>
+                <button class="filter-btn" data-category="lustig">
+                    <i class="fas fa-laugh"></i>
+                    Lustig
+                </button>
+                <button class="filter-btn" data-category="motivierend">
+                    <i class="fas fa-heart"></i>
+                    Motivierend
+                </button>
+                <button class="filter-btn" data-category="gaming">
+                    <i class="fas fa-gamepad"></i>
+                    Gaming
+                </button>
+            </div>
+        </div>
+        
+        <div id="quotes-container" class="quotes-grid">
+            <!-- Quotes will be loaded dynamically -->
+        </div>
+        
+        <div id="no-quotes" class="no-quotes-message" style="display: none;">
+            <i class="fas fa-quote-left"></i>
+            <h3>Keine Zitate gefunden</h3>
+            <p>Es wurden keine Zitate gefunden, die deinen Suchkriterien entsprechen.</p>
+        </div>
+        
+        <div class="load-more-section">
+            <button id="load-more-btn" class="load-more-btn" style="display: none;">
+                <i class="fas fa-plus"></i>
+                Mehr Zitate laden
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Rosenrausch. Alle Rechte vorbehalten.
+        <div class="legal-links">
+            <a href="/privacy">Datenschutz</a> |
+            <a href="/impressum">Impressum</a>
+        </div>
+    </div>
+
+    <script src="js/quotes.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>
