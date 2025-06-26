@@ -1,12 +1,8 @@
 /* Team Page Specific Styles */
 .team-container {
     max-width: 1200px;
-    margin: 0 auto;.team-member:hover {
-    transform: none;
-    background: rgba(168, 85, 247, 0.08);
-    border-color: rgba(168, 85, 247, 0.25);
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.1);
-}adding: 40px 20px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .team-header {
