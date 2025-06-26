@@ -1,10 +1,26 @@
-/* Legal Pages Styles */
+/* Legal Pages Styles - Adapted to main design */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    background: linear-gradient(135deg, #2D1B69 0%, #1A1033 30%, #2D1B69 60%, #4C1D95 100%);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    -webkit-overflow-scrolling: touch;
+}
+
 .legal-hero {
-    background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #7C3AED 100%);
+    background: rgba(26, 16, 51, 0.8);
+    backdrop-filter: blur(20px);
     padding: 6rem 0 4rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .legal-hero::before {
@@ -13,8 +29,8 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
 }
 
 .hero-content {
@@ -23,58 +39,86 @@
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: white;
+    color: #E9D5FF;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+    background: linear-gradient(45deg, #E9D5FF, #A855F7, #E9D5FF);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-title i {
     margin-right: 1rem;
-    font-size: 3rem;
+    font-size: 2.2rem;
+    color: #A855F7;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    color: #9F7AEA;
     margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Main Container - wie in der Hauptseite */
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .legal-content {
-    padding: 4rem 0;
-    background: #0F0F23;
+    padding: 2rem 0;
 }
 
 .legal-document {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(26, 16, 51, 0.7);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 40px 30px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.legal-document::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
 }
 
 .legal-header {
     text-align: center;
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .legal-header h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #A855F7, #EC4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #E9D5FF;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
 .last-updated {
-    color: rgba(255, 255, 255, 0.6);
+    color: #9F7AEA;
     font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 .legal-section {
@@ -82,7 +126,7 @@
 }
 
 .legal-section h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #A855F7;
     margin-bottom: 1rem;
@@ -91,22 +135,24 @@
 }
 
 .legal-section h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #EC4899;
+    color: #E9D5FF;
     margin-bottom: 0.8rem;
     margin-top: 1.5rem;
 }
 
 .legal-section p {
-    color: rgba(255, 255, 255, 0.8);
+    color: #E9D5FF;
     line-height: 1.6;
     margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 .legal-section ul {
-    color: rgba(255, 255, 255, 0.8);
+    color: #E9D5FF;
     padding-left: 1.5rem;
+    opacity: 0.9;
 }
 
 .legal-section li {
@@ -116,10 +162,11 @@
 
 .contact-card {
     background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    border-radius: 15px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
     padding: 1.5rem;
     margin: 1rem 0;
+    backdrop-filter: blur(10px);
 }
 
 .contact-card h4 {
@@ -130,40 +177,45 @@
 
 .contact-card p {
     margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #E9D5FF;
+    opacity: 0.9;
 }
 
 .legal-section a {
-    color: #EC4899;
+    color: #A855F7;
     text-decoration: none;
-    border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.3);
     transition: all 0.3s ease;
 }
 
 .legal-section a:hover {
-    color: #A855F7;
-    border-bottom-color: #A855F7;
+    color: #E9D5FF;
+    border-bottom-color: #E9D5FF;
 }
 
 .legal-footer {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: #9F7AEA;
+    opacity: 0.8;
 }
 
-/* Navigation für Legal Pages */
+/* Navigation für Legal Pages - angepasst an Hauptseite */
 .navbar {
-    background: rgba(15, 15, 35, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
-    position: fixed;
+    background: rgba(26, 16, 51, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -186,7 +238,7 @@
 }
 
 .nav-logo i {
-    color: #EC4899;
+    color: #A855F7;
 }
 
 .nav-menu {
@@ -197,20 +249,24 @@
     gap: 2rem;
 }
 
-.nav-link {
-    color: rgba(255, 255, 255, 0.8);
+.nav-item {
+    color: #E9D5FF;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
+    padding: 12px 24px;
+    border-radius: 25px;
     transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
-.nav-link:hover {
+.nav-item:hover,
+.nav-item.active {
+    background: rgba(168, 85, 247, 0.15);
     color: white;
-    background: rgba(168, 85, 247, 0.2);
+    transform: none;
+    box-shadow: none;
 }
 
 .hamburger {
@@ -228,84 +284,47 @@
     transition: 0.3s;
 }
 
-/* Footer für Legal Pages */
+/* Footer für Legal Pages - angepasst an main.css */
 .footer {
-    background: #0A0A1A;
-    padding: 3rem 0 1rem;
-    margin-top: 4rem;
+    color: #9F7AEA;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(168, 85, 247, 0.1);
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+.legal-links {
+    margin-top: 10px;
 }
 
-.footer-section h4 {
-    color: #A855F7;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+.legal-links a {
+    color: #9F7AEA;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: #EC4899;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #EC4899;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-bottom i {
-    color: #EC4899;
+.legal-links a:hover {
+    color: #E9D5FF;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(15, 15, 35, 0.95);
+        background: rgba(26, 16, 51, 0.95);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         backdrop-filter: blur(20px);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(168, 85, 247, 0.2);
         padding: 2rem 0;
     }
 
@@ -330,22 +349,41 @@
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero-title i {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .legal-document {
         padding: 2rem 1.5rem;
+        border-radius: 20px;
     }
 
     .legal-header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+    
+    .main-container {
+        padding: 20px 15px;
+    }
+}
 
+@media (max-width: 480px) {
     .nav-container {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .legal-document {
+        padding: 20px 15px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .main-container {
+        padding: 15px 10px;
     }
 }
