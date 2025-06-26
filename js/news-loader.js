@@ -241,8 +241,8 @@ const newsStyles = `
     }
     
     .show-more-btn:hover {
-        background: rgba(168, 85, 247, 0.3);
-        transform: translateY(-2px);
+        background: rgba(168, 85, 247, 0.2);
+        transform: none;
         box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
     }
     

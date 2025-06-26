@@ -31,59 +31,15 @@ class AnimationController {
     }
     
     setupParallaxEffects() {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.rose-decoration');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
+        // Parallax effects disabled for professional appearance
     }
     
     setupHoverEffects() {
-        // Enhanced hover effects for interactive elements
-        document.querySelectorAll('.link-button, .nav-item, .server-button, .quote-action-btn').forEach(element => {
-            element.addEventListener('mouseenter', (e) => {
-                this.createRippleEffect(e);
-            });
-        });
+        // Enhanced hover effects disabled for professional appearance
     }
     
     createRippleEffect(e) {
-        const button = e.currentTarget;
-        const rect = button.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        const ripple = document.createElement('span');
-        ripple.style.cssText = `
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(168, 85, 247, 0.3);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            left: ${x}px;
-            top: ${y}px;
-            width: ${size}px;
-            height: ${size}px;
-            pointer-events: none;
-            z-index: -1;
-        `;
-        
-        // Ensure button has relative positioning
-        if (getComputedStyle(button).position === 'static') {
-            button.style.position = 'relative';
-        }
-        
-        button.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
+        // Ripple effect disabled for professional appearance
     }
     
     // Smooth scroll functionality

@@ -1,8 +1,12 @@
 /* Team Page Specific Styles */
 .team-container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    margin: 0 auto;.team-member:hover {
+    transform: none;
+    background: rgba(168, 85, 247, 0.08);
+    border-color: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.1);
+}adding: 40px 20px;
 }
 
 .team-header {
@@ -95,10 +99,10 @@
 }
 
 .team-member:hover {
-    transform: translateY(-8px) scale(1.02);
-    background: rgba(168, 85, 247, 0.15);
-    border-color: rgba(168, 85, 247, 0.4);
-    box-shadow: 0 20px 50px rgba(168, 85, 247, 0.2);
+    transform: translateY(-3px);
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.1);
 }
 
 .team-member img {
@@ -112,9 +116,9 @@
 }
 
 .team-member:hover img {
-    border-color: rgba(168, 85, 247, 0.6);
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+    border-color: rgba(168, 85, 247, 0.4);
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
 .team-member h3 {
@@ -165,10 +169,10 @@
 
 .social-links a:hover {
     color: #E9D5FF;
-    background: rgba(168, 85, 247, 0.3);
-    border-color: rgba(168, 85, 247, 0.5);
-    transform: translateY(-2px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: none;
+    box-shadow: 0 3px 8px rgba(168, 85, 247, 0.15);
 }
 
 /* Platform-specific hover colors */
@@ -252,14 +256,7 @@
     }
 }
 
-/* Loading Animation */
+/* Loading Animation - Removed for professional appearance */
 .team-member {
-    animation: fadeInUp 0.8s ease-out;
+    animation: none;
 }
-
-.team-member:nth-child(1) { animation-delay: 0.1s; }
-.team-member:nth-child(2) { animation-delay: 0.2s; }
-.team-member:nth-child(3) { animation-delay: 0.3s; }
-.team-member:nth-child(4) { animation-delay: 0.4s; }
-.team-member:nth-child(5) { animation-delay: 0.5s; }
-.team-member:nth-child(6) { animation-delay: 0.6s; }

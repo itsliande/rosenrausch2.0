@@ -80,10 +80,10 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: rgba(168, 85, 247, 0.3);
-    border-color: rgba(168, 85, 247, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: none;
+    box-shadow: 0 3px 10px rgba(168, 85, 247, 0.1);
 }
 
 /* Quotes Grid */
@@ -116,9 +116,9 @@
 }
 
 .quote-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    border-color: rgba(168, 85, 247, 0.4);
-    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
+    transform: none;
+    border-color: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.1);
 }
 
 .quote-header {
@@ -312,10 +312,10 @@
 }
 
 .load-more-btn:hover {
-    background: rgba(168, 85, 247, 0.3);
-    border-color: rgba(168, 85, 247, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: none;
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.1);
 }
 
 /* Mobile Responsiveness */
@@ -392,17 +392,10 @@
     }
 }
 
-/* Loading Animation */
+/* Loading Animation - Removed for professional appearance */
 .quote-card {
-    animation: fadeInUp 0.8s ease-out;
+    animation: none;
 }
-
-.quote-card:nth-child(1) { animation-delay: 0.1s; }
-.quote-card:nth-child(2) { animation-delay: 0.2s; }
-.quote-card:nth-child(3) { animation-delay: 0.3s; }
-.quote-card:nth-child(4) { animation-delay: 0.4s; }
-.quote-card:nth-child(5) { animation-delay: 0.5s; }
-.quote-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* Copy animation */
 .copied {
