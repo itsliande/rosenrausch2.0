@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/rosenrausch-performer.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/rosenrausch-performer.svg">
+
+    <title>401 - Nicht autorisiert | Rosenrausch</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/legal.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <style>
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            min-height: 60vh;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(26, 16, 51, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+        }
+
+        .error-code {
+            font-size: 120px;
+            color: #A855F7;
+            margin: 0;
+            animation: shake 2s infinite;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+            font-weight: 800;
+            position: relative;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-message {
+            font-size: 28px;
+            color: #E9D5FF;
+            margin: 20px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .funny-text {
+            font-size: 18px;
+            color: #9F7AEA;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .lock-icon {
+            font-size: 60px;
+            color: #A855F7;
+            margin: 20px 0;
+            animation: lock-bounce 2s infinite;
+        }
+
+        @keyframes lock-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .back-button {
+            padding: 12px 25px;
+            background: rgba(168, 85, 247, 0.3);
+            color: #E9D5FF;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background: rgba(168, 85, 247, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .error-code {
+                font-size: 80px;
+            }
+
+            .error-message {
+                font-size: 22px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .back-button {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="termine.html" class="nav-link">
+                        <span>Termine</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="minecraft.html" class="nav-link">
+                        <span>Minecraft</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quotes.html" class="nav-link">
+                        <span>Quotes</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="error-container">
+                <h1 class="error-code">401</h1>
+                <div class="lock-icon">🔒</div>
+                <h2 class="error-message">Nicht autorisiert</h2>
+                <p class="funny-text">Hey, wir kennen dich nicht! Hast du dein Passwort vergessen oder bist du vielleicht ein Spion?</p>
+
+                <div class="button-group">
+                    <a href="javascript:history.back()" class="back-button">Zurück zur letzten Seite</a>
+                    <a href="index.html" class="back-button">Zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rosenrausch. Made with <i class="fas fa-heart"></i> for the community.</p>
+        <div class="legal-links">
+            <a href="impressum.html">Impressum</a> |
+            <a href="privacy.html">Datenschutz</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/404-handler.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

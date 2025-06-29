@@ -202,19 +202,17 @@ body {
     opacity: 0.8;
 }
 
-/* Navigation für Legal Pages - angepasst an Hauptseite */
+/* Navigation für Legal Pages - vereinfacht */
 .navbar {
-    background: rgba(26, 16, 51, 0.8);
+    background: rgba(26, 16, 51, 0.9);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
-    padding: 20px;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+    padding: 15px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    flex-wrap: wrap;
     transition: all 0.3s ease;
 }
 

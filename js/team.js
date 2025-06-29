@@ -17,45 +17,61 @@ class TeamManager {
     }
     
     async loadTeamData() {
-        // Simulate loading team data
-        // In a real implementation, this would fetch from data/team.json
-        this.teamData = [
-            {
-                id: 1,
-                name: "Rosenrausch",
-                role: "Gründer & Künstler",
-                bio: "Der kreative Kopf hinter Rosenrausch. Musik, Content Creation und Community sind meine Leidenschaft.",
-                image: "images/profile.jpg",
-                category: "leadership",
-                social: {
-                    instagram: "https://instagram.rosenrausch.xyz",
-                    tiktok: "https://tiktok.rosenrausch.xyz",
-                    spotify: "https://spotify.rosenrausch.xyz"
-                }
-            },
-            {
-                id: 2,
-                name: "Community Manager",
-                role: "Community Management",
-                bio: "Ich sorge dafür, dass unsere Community ein freundlicher und einladender Ort bleibt.",
-                image: "images/team1.jpg",
-                category: "team",
-                social: {
-                    discord: "https://discord.rosenrausch.xyz"
-                }
-            },
-            {
-                id: 3,
-                name: "Content Creator",
-                role: "Content & Design",
-                bio: "Kreative Inhalte und visuelles Design sind mein Spezialgebiet.",
-                image: "images/team2.jpg",
-                category: "team",
-                social: {
-                    instagram: "https://instagram.rosenrausch.xyz"
-                }
+        try {
+            // Load team data from JSON file
+            const response = await fetch('data/team.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        ];
+            
+            const data = await response.json();
+            this.teamData = data.team || [];
+            this.categories = data.categories || [];
+            this.metadata = data.meta || {};
+            
+        } catch (error) {
+            console.error('Error loading team data from JSON:', error);
+            
+            // Fallback to hardcoded data if JSON loading fails
+            this.teamData = [
+                {
+                    id: 1,
+                    name: "Rosenrausch",
+                    role: "Gründer & Künstler",
+                    bio: "Der kreative Kopf hinter Rosenrausch. Musik, Content Creation und Community sind meine Leidenschaft.",
+                    image: "images/profile.jpg",
+                    category: "leadership",
+                    social: {
+                        instagram: "https://instagram.rosenrausch.xyz",
+                        tiktok: "https://tiktok.rosenrausch.xyz",
+                        spotify: "https://spotify.rosenrausch.xyz"
+                    }
+                },
+                {
+                    id: 2,
+                    name: "Community Manager",
+                    role: "Community Management",
+                    bio: "Ich sorge dafür, dass unsere Community ein freundlicher und einladender Ort bleibt.",
+                    image: "images/team1.jpg",
+                    category: "team",
+                    social: {
+                        discord: "https://discord.rosenrausch.xyz"
+                    }
+                },
+                {
+                    id: 3,
+                    name: "Content Creator",
+                    role: "Content & Design",
+                    bio: "Kreative Inhalte und visuelles Design sind mein Spezialgebiet.",
+                    image: "images/team2.jpg",
+                    category: "team",
+                    social: {
+                        instagram: "https://instagram.rosenrausch.xyz"
+                    }
+                }
+            ];
+        }
     }
     
     renderTeam() {

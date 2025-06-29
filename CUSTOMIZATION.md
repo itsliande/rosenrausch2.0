@@ -45,19 +45,7 @@ this.teamData = [
 }
 ```
 
-### 4. Quotes (js/quotes.js)
-```javascript
-// Add your quotes to quotesData:
-{
-    id: 1,
-    text: "Your inspiring quote...",
-    author: "Author Name",
-    context: "Context or situation",
-    category: "inspiration" // motivation, creativity, life, music
-}
-```
-
-### 5. Minecraft Server Info (js/minecraft.js)
+### 4. Minecraft Server Info (js/minecraft.js)
 ```javascript
 // Update server information:
 const serverInfo = {
@@ -68,7 +56,7 @@ const serverInfo = {
 };
 ```
 
-### 6. News (js/news-loader.js)
+### 5. News (js/news-loader.js)
 ```javascript
 // Update news items:
 {

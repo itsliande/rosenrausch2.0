@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/rosenrausch-performer.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/rosenrausch-performer.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/legal.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #2D1B69 0%, #1A1033 100%) fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(91, 33, 182, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .error-code {
+            font-size: 120px;
+            color: #A855F7;
+            margin: 0;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+            font-weight: 800;
+        }
+
+        .error-message {
+            font-size: 28px;
+            color: #E9D5FF;
+            margin: 20px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .funny-text {
+            font-size: 18px;
+            color: #C4B5FD;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #E9D5FF;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(168, 85, 247, 0.3);
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            .error-message {
+                font-size: 22px;
+            }
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .back-button {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        .copyright {
+            color: #E9D5FF;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        .legal-links a {
+            color: #9F7AEA;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            color: #E9D5FF;
+            text-decoration: underline;
+        }
+
+        .navbar {
+            background-color: rgba(26, 16, 51, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+        }
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="termine.html" class="nav-link">
+                        <span>Termine</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="minecraft.html" class="nav-link">
+                        <span>Minecraft</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="quotes.html" class="nav-link">
+                        <span>Quotes</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="error-container">
+            <h1 class="error-code">500</h1>
+            <h2 class="error-message">Interner Serverfehler</h2>
+            <p class="funny-text">Unser Server hatte gerade einen kleinen Nervenzusammenbruch. Wir bringen ihm jetzt einen Beruhigungstee.</p>
+
+            <div class="button-group">
+                <a href="javascript:history.back()" class="back-button">Zurück zur letzten Seite</a>
+                <a href="index.html" class="back-button">Zur Startseite</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rosenrausch. Made with <i class="fas fa-heart"></i> for the community.</p>
+        <div class="legal-links">
+            <a href="impressum.html">Impressum</a> |
+            <a href="privacy.html">Datenschutz</a>
+        </div>
+    </footer>
+
+    <script src="js/404-handler.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

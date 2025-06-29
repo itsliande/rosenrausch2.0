@@ -66,15 +66,40 @@
 </head>
 <body>
     <!-- Minimal decorative elements -->
-    <div class="rose-decoration" style="left: 20%; animation-delay: 5s;">🌹</div>
-    <div class="rose-decoration" style="left: 80%; animation-delay: 15s;">🌹</div>
+    <div class="rose-decoration">🌹</div>
+    <div class="rose-decoration">🌹</div>
 
-    <nav class="navbar">
-        <a href="index.html" class="nav-item active">Home</a>
-        <a href="team.html" class="nav-item">Team</a>
-        <a href="termine.html" class="nav-item">Termine</a>
-        <a href="minecraft.html" class="nav-item">Minecraft</a>
-        <a href="quotes.html" class="nav-item">Quotes</a>
+            <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="termine.html" class="nav-link">
+                        <span>Termine</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="minecraft.html" class="nav-link">
+                        <span>Minecraft</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
 
     <div class="main-container">
@@ -83,62 +108,74 @@
                 <div class="profile-glow"></div>
                 <img src="images/profile.svg" alt="Rosenrausch Profilbild" class="profile-img">
                 <h1 class="profile-title">ROSENRAUSCH</h1>
-                <p class="profile-subtitle">Alle meine Links 🎵✨</p>
+                <p class="profile-subtitle">Alle meine Links</p>
             </div>
             
             <div class="links-section">
                 <a href="https://discord.rosenrausch.xyz" target="_blank" class="link-button discord-link">
                     <div class="link-content">
-                        <i class="fab fa-discord link-icon"></i>
-                        <span>Discord Server</span>
+                        <div class="link-main">
+                            <i class="fab fa-discord link-icon"></i>
+                            <span>Discord Server</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Tritt meiner Community bei!</span>
+                    <div class="link-description">Tritt meiner Community bei!</div>
                 </a>
                 
                 <a href="https://spotify.rosenrausch.xyz" target="_blank" class="link-button spotify-link">
                     <div class="link-content">
-                        <i class="fab fa-spotify link-icon"></i>
-                        <span>Spotify</span>
+                        <div class="link-main">
+                            <i class="fab fa-spotify link-icon"></i>
+                            <span>Spotify</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Hör dir meine Musik an!</span>
+                    <div class="link-description">Hör dir meine Musik an!</div>
                 </a>
                 
                 <a href="https://instagram.rosenrausch.xyz" target="_blank" class="link-button instagram-link">
                     <div class="link-content">
-                        <i class="fab fa-instagram link-icon"></i>
-                        <span>Instagram</span>
+                        <div class="link-main">
+                            <i class="fab fa-instagram link-icon"></i>
+                            <span>Instagram</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Folge mir auf Instagram!</span>
+                    <div class="link-description">Folge mir für Updates!</div>
                 </a>
                 
                 <a href="https://applemusik.rosenrausch.xyz" target="_blank" class="link-button apple-link">
                     <div class="link-content">
-                        <i class="fab fa-apple link-icon"></i>
-                        <span>Apple Music</span>
+                        <div class="link-main">
+                            <i class="fab fa-apple link-icon"></i>
+                            <span>Apple Music</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Auch auf Apple Music!</span>
+                    <div class="link-description">Auch auf Apple Music!</div>
                 </a>
                 
                 <a href="https://whatsapp.rosenrausch.xyz" target="_blank" class="link-button whatsapp-link">
                     <div class="link-content">
-                        <i class="fab fa-whatsapp link-icon"></i>
-                        <span>WhatsApp Channel</span>
+                        <div class="link-main">
+                            <i class="fab fa-whatsapp link-icon"></i>
+                            <span>WhatsApp Channel</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Bleib auf dem Laufenden!</span>
+                    <div class="link-description">Bleib auf dem Laufenden!</div>
                 </a>
                 
-                <a href="https://tiktok.rosenrausch.xyz" target="_blank" class="link-button tiktok-link">
+                <a href="https://tiktok.rosenrausch.xyz" target="_blank" class="link-button tiktok-button animate-in">
                     <div class="link-content">
-                        <i class="fab fa-tiktok link-icon"></i>
-                        <span>TikTok</span>
+                        <div class="link-main">
+                            <i class="fab fa-tiktok link-icon"></i>
+                            <span>TikTok</span>
+                        </div>
+                        <span class="link-arrow">→</span>
                     </div>
-                    <span class="link-arrow">→</span>
-                    <span class="link-description">Folge mir auf TikTok!</span>
+                    <div class="link-description">Folge mir auf TikTok!</div>
                 </a>
             </div>
         </div>
@@ -163,7 +200,7 @@
     </div>
 
     <script src="js/mobile-nav.js"></script>
-    <script src="js/news-loader.js"></script>
+    <script src="js/news-loader-fixed.js"></script>
     <script src="js/animations.js"></script>
 </body>
 </html>

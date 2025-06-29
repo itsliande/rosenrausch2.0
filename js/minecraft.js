@@ -3,14 +3,62 @@ class MinecraftManager {
     constructor() {
         this.serverIP = 'play.rosenrausch.de';
         this.discordInvite = 'https://discord.gg/rosenrausch';
+        this.serverData = null;
         this.init();
     }
 
-    init() {
+    async init() {
+        await this.loadMinecraftData();
         this.setupEventListeners();
         this.loadServerStatus();
         this.startStatusUpdates();
         this.initializeAnimations();
+    }
+
+    async loadMinecraftData() {
+        try {
+            // Load minecraft data from JSON file
+            const response = await fetch('data/minecraft.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            this.serverData = await response.json();
+            
+            // Update server IP and Discord invite from JSON
+            this.serverIP = this.serverData.server.ip || this.serverIP;
+            this.discordInvite = this.serverData.discord.invite || this.discordInvite;
+            
+            // Update page elements with data from JSON
+            this.updatePageContent();
+            
+        } catch (error) {
+            console.error('Error loading minecraft data from JSON:', error);
+            // Continue with default values if JSON loading fails
+        }
+    }
+
+    updatePageContent() {
+        if (!this.serverData) return;
+
+        // Update server IP display
+        const serverIPElement = document.getElementById('server-ip');
+        if (serverIPElement) {
+            serverIPElement.textContent = this.serverIP;
+        }
+
+        // Update server description
+        const serverDescElements = document.querySelectorAll('.minecraft-card .server-description');
+        if (serverDescElements.length > 0 && this.serverData.server.description) {
+            serverDescElements[0].textContent = this.serverData.server.description;
+        }
+
+        // Update Discord description
+        const discordDescElements = document.querySelectorAll('.discord-card .server-description');
+        if (discordDescElements.length > 0 && this.serverData.discord.description) {
+            discordDescElements[0].textContent = this.serverData.discord.description;
+        }
     }
 
     setupEventListeners() {

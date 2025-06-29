@@ -1,0 +1,59 @@
+[
+    {
+        "id": 8,
+        "title": "Beispiel News-Titel",
+        "date": "28. Juni 2025",
+        "content": "Das ist der Inhalt der News. Sie können hier normalen Text schreiben.\n\nFür neue Zeilen verwenden Sie \\n\n\nLinks werden automatisch zu Buttons:\nhttps://spotify.rosenrausch.xyz\nhttps://discord.rosenrausch.xyz",
+        "active": true
+    },
+    {
+        "id": 7,
+        "title": "Neuer Song veröffentlicht!",
+        "date": "15. Januar 2025",
+        "content": "Ich habe einen neuen Song auf allen Streaming-Plattformen veröffentlicht. Hört ihn euch an und lasst mich wissen, wie er euch gefällt!\n\nLet me know what you think: https://spotify.rosenrausch.xyz\nApple Music: https://applemusik.rosenrausch.xyz",
+        "active": true
+    },
+    {
+        "id": 6,
+        "title": "Community Event geplant",
+        "date": "10. Januar 2025",
+        "content": "Bald gibt es ein großes Community Event! Weitere Details folgen in den nächsten Tagen. Bleibt dran!\n\nMehr Info auf der Termine-Seite: https://rosenrausch.xyz/termine",
+        "active": true,
+        "terminLink": "community-event-2025"
+    },
+    {
+        "id": 5,
+        "title": "Discord Server Update",
+        "date": "5. Januar 2025",
+        "content": "Der Discord Server hat neue Channels und Features bekommen. Schaut vorbei und entdeckt die Neuerungen!\n\nJoin our Discord: https://discord.rosenrausch.xyz",
+        "active": true
+    },
+    {
+        "id": 4,
+        "title": "Jahresrückblick 2024",
+        "date": "31. Dezember 2024",
+        "content": "Was für ein Jahr! Danke an alle, die Teil dieser unglaublichen Reise waren. Hier ist ein kleiner Rückblick auf die Highlights.",
+        "active": true
+    },
+    {
+        "id": 3,
+        "title": "Minecraft Server läuft wieder",
+        "date": "28. Dezember 2024",
+        "content": "Nach den technischen Problemen ist unser Minecraft Server wieder online! Neue Welten und Abenteuer warten auf euch.\n\nMinecraft Info: https://rosenrausch.xyz/minecraft",
+        "active": true
+    },
+    {
+        "id": 2,
+        "title": "Neue Merchandise verfügbar",
+        "date": "20. Dezember 2024",
+        "content": "Unser neuer Merch ist da! T-Shirts, Hoodies und mehr mit dem Rosenrausch Design. Limitierte Auflage!\n\nShop: https://shop.rosenrausch.xyz",
+        "active": true
+    },
+    {
+        "id": 1,
+        "title": "Stream Schedule Update",
+        "date": "15. Dezember 2024",
+        "content": "Ab sofort gibt es einen festen Stream-Schedule! Jeden Dienstag und Freitag um 20:00 Uhr live auf allen Plattformen.\n\nTikTok Live: https://tiktok.rosenrausch.xyz",
+        "active": true
+    }
+]

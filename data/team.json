@@ -1,0 +1,78 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Rosenrausch",
+      "role": "Gründer & Künstler",
+      "bio": "Der kreative Kopf hinter Rosenrausch. Musik, Content Creation und Community sind meine Leidenschaft.",
+      "image": "images/profile.jpg",
+      "category": "leadership",
+      "social": {
+        "instagram": "https://instagram.rosenrausch.xyz",
+        "tiktok": "https://tiktok.rosenrausch.xyz",
+        "spotify": "https://spotify.rosenrausch.xyz",
+        "discord": "https://discord.rosenrausch.xyz"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Community Manager",
+      "role": "Community Management",
+      "bio": "Ich sorge dafür, dass unsere Community ein freundlicher und einladender Ort bleibt.",
+      "image": "images/team1.jpg",
+      "category": "team",
+      "social": {
+        "discord": "https://discord.rosenrausch.xyz"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Content Creator",
+      "role": "Content & Design",
+      "bio": "Kreative Inhalte und visuelles Design sind mein Spezialgebiet.",
+      "image": "images/team2.jpg",
+      "category": "team",
+      "social": {
+        "instagram": "https://instagram.rosenrausch.xyz",
+        "tiktok": "https://tiktok.rosenrausch.xyz"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Moderator",
+      "role": "Chat Moderation",
+      "bio": "Halte die Community sauber und freundlich für alle.",
+      "image": "images/profile.svg",
+      "category": "moderators",
+      "social": {
+        "discord": "https://discord.rosenrausch.xyz"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "leadership",
+      "name": "Führung",
+      "description": "Die Leitung des Rosenrausch-Teams"
+    },
+    {
+      "id": "team",
+      "name": "Team Mitglieder",
+      "description": "Die Hauptmitglieder des Teams"
+    },
+    {
+      "id": "moderators",
+      "name": "Moderatoren",
+      "description": "Community-Moderatoren"
+    },
+    {
+      "id": "contributors",
+      "name": "Mitwirkende",
+      "description": "Externe Mitwirkende und Helfer"
+    }
+  ],
+  "meta": {
+    "lastUpdated": "2025-01-15",
+    "version": "1.0"
+  }
+}

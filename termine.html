@@ -46,14 +46,39 @@
 </head>
 <body>
     <!-- Minimal decorative elements -->
-    <div class="rose-decoration" style="left: 70%; animation-delay: 10s;">�</div>
+    <div class="rose-decoration">�</div>
 
-    <nav class="navbar">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="team.html" class="nav-item">Team</a>
-        <a href="termine.html" class="nav-item active">Termine</a>
-        <a href="minecraft.html" class="nav-item">Minecraft</a>
-        <a href="quotes.html" class="nav-item">Quotes</a>
+            <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="termine.html" class="nav-link active">
+                        <span>Termine</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="minecraft.html" class="nav-link">
+                        <span>Minecraft</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
     
     <div class="events-container">
@@ -74,7 +99,7 @@
             <!-- Events will be loaded dynamically -->
         </div>
         
-        <div id="no-events" class="no-events-message" style="display: none;">
+        <div id="no-events" class="no-events-message">
             <i class="fas fa-calendar-times"></i>
             <h3>Keine Events geplant</h3>
             <p>Aktuell sind keine Events geplant. Schau bald wieder vorbei oder folge uns auf Social Media für Updates!</p>
@@ -89,7 +114,7 @@
         </div>
     </div>
 
-    <script src="js/events.js"></script>
+    <script src="js/events-simple.js"></script>
     <script src="js/mobile-nav.js"></script>
 </body>
 </html>

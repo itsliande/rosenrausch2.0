@@ -1,0 +1,70 @@
+{
+  "site": {
+    "name": "Rosenrausch",
+    "tagline": "Musik, Community und Content",
+    "description": "Offizielle Website von Rosenrausch - Musik, Community und Content Creator",
+    "url": "https://rosenrausch.xyz",
+    "logo": "images/rosenrausch-performer.svg",
+    "favicon": "images/rosenrausch-performer.svg"
+  },
+  "social": {
+    "discord": "https://discord.rosenrausch.xyz",
+    "tiktok": "https://tiktok.rosenrausch.xyz",
+    "instagram": "https://instagram.rosenrausch.xyz",
+    "spotify": "https://spotify.rosenrausch.xyz",
+    "applemusic": "https://applemusik.rosenrausch.xyz",
+    "youtube": "https://youtube.rosenrausch.xyz"
+  },
+  "contact": {
+    "email": "kontakt@rosenrausch.xyz",
+    "business": {
+      "name": "Rosenrausch",
+      "street": "Musterstraße 123",
+      "city": "12345 Musterstadt",
+      "country": "Deutschland"
+    }
+  },
+  "features": {
+    "news": {
+      "enabled": true,
+      "itemsPerPage": 5,
+      "showCategories": true
+    },
+    "events": {
+      "enabled": true,
+      "showPastEvents": false,
+      "maxUpcomingEvents": 10
+    },
+    "team": {
+      "enabled": true,
+      "showCategories": true
+    },
+    "minecraft": {
+      "enabled": true,
+      "serverIP": "play.rosenrausch.de",
+      "checkStatus": true,
+      "statusUpdateInterval": 300000
+    },
+    "quotes": {
+      "enabled": true,
+      "randomQuote": true,
+      "quotesPerPage": 10
+    }
+  },
+  "theme": {
+    "primaryColor": "#A855F7",
+    "secondaryColor": "#EC4899",
+    "accentColor": "#FFD700",
+    "backgroundColor": "#0F0F23",
+    "textColor": "#FFFFFF"
+  },
+  "analytics": {
+    "googleAnalytics": "",
+    "enabled": false
+  },
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2025-01-15",
+    "author": "Rosenrausch Team"
+  }
+}

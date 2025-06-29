@@ -3,10 +3,62 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle mobile navigation if needed
     const navbar = document.querySelector('.navbar');
     const navItems = document.querySelectorAll('.nav-item');
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
     
-    // Add mobile toggle functionality
+    // Modern hamburger menu functionality
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            document.body.classList.toggle('nav-open');
+        });
+        
+        // Close menu when clicking nav items
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                !navbar.contains(e.target) && 
+                navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('nav-open');
+            }
+        });
+        
+        // Add touch event listeners to prevent scrolling in nav menu
+        navMenu.addEventListener('touchmove', function(e) {
+            if (navMenu.classList.contains('active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Prevent scroll restoration when orientation changes
+        window.addEventListener('orientationchange', function() {
+            if (navMenu.classList.contains('active')) {
+                setTimeout(() => {
+                    document.body.classList.add('nav-open');
+                }, 100);
+            }
+        });
+    }
+    
+    // Legacy mobile toggle functionality (for pages with old nav structure)
     function createMobileToggle() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 768 && !hamburger) {
             if (!document.querySelector('.mobile-nav-toggle')) {
                 const toggleBtn = document.createElement('button');
                 toggleBtn.className = 'mobile-nav-toggle';
@@ -14,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 toggleBtn.addEventListener('click', toggleMobileNav);
                 document.body.appendChild(toggleBtn);
             }
-        } else {
+        } else if (!hamburger) {
             const existingToggle = document.querySelector('.mobile-nav-toggle');
             if (existingToggle) {
                 existingToggle.remove();

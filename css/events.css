@@ -49,7 +49,7 @@
 .events-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
 
 .event-card {
@@ -79,7 +79,7 @@
 }
 
 .event-header {
-    padding: 25px;
+    padding: 30px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -139,11 +139,11 @@
 }
 
 .event-details {
-    padding: 25px;
+    padding: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .event-info-item {
@@ -171,8 +171,8 @@
 .event-description {
     color: #E9D5FF;
     line-height: 1.6;
-    margin: 20px 25px;
-    padding: 20px;
+    margin: 25px 30px;
+    padding: 25px;
     background: rgba(168, 85, 247, 0.1);
     border-radius: 15px;
     border-left: 4px solid rgba(168, 85, 247, 0.4);
@@ -188,7 +188,7 @@
 .event-actions {
     display: flex;
     gap: 15px;
-    margin: 20px 25px 25px;
+    margin: 25px 30px 30px;
 }
 
 .event-button {
@@ -287,11 +287,15 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .events-container {
-        padding: 20px 15px;
+        padding: 30px 20px;
+    }
+    
+    .events-list {
+        gap: 30px;
     }
     
     .event-header {
-        padding: 20px;
+        padding: 25px;
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
@@ -305,12 +309,17 @@
     
     .event-details {
         grid-template-columns: 1fr;
+        padding: 25px;
+    }
+    
+    .event-description {
+        margin: 20px 25px;
         padding: 20px;
     }
     
     .event-actions {
         flex-direction: column;
-        margin: 15px 20px 20px;
+        margin: 20px 25px 25px;
     }
     
     .event-button {
@@ -320,6 +329,14 @@
 }
 
 @media (max-width: 480px) {
+    .events-container {
+        padding: 20px 15px;
+    }
+    
+    .events-list {
+        gap: 25px;
+    }
+    
     .events-header .page-title {
         font-size: 2rem;
     }
@@ -329,7 +346,7 @@
     }
     
     .event-header {
-        padding: 15px;
+        padding: 20px;
     }
     
     .event-title {
@@ -337,12 +354,16 @@
     }
     
     .event-details {
-        padding: 15px;
+        padding: 20px;
     }
     
     .event-description {
-        margin: 15px;
-        padding: 15px;
+        margin: 15px 20px;
+        padding: 18px;
+    }
+    
+    .event-actions {
+        margin: 18px 20px 20px;
     }
     
     .no-events-message {

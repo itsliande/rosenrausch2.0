@@ -3,7 +3,7 @@ class NewsLoader {
     constructor() {
         this.newsContainer = document.getElementById('news-items-container');
         this.currentPage = 1;
-        this.itemsPerPage = 5;
+        this.itemsPerPage = 3; // Only show 3 latest news on main page
         this.allNews = [];
         this.displayedNews = [];
         
@@ -12,47 +12,56 @@ class NewsLoader {
     
     async init() {
         try {
-            await this.loadNews();
-            this.displayNews();
+            const success = await this.retryLoadNews();
+            if (success) {
+                this.displayNews();
+            } else {
+                this.showNoNewsMessage();
+            }
         } catch (error) {
-            console.error('Error loading news:', error);
+            console.error('Error initializing news:', error);
             this.showNoNewsMessage();
         }
     }
     
     async loadNews() {
-        // Simulate API call or load from JSON file
-        // In a real implementation, this would fetch from data/news.json
-        this.allNews = [
-            {
-                id: 1,
-                title: "Neuer Song veröffentlicht!",
-                content: "Ich habe einen neuen Song auf allen Streaming-Plattformen veröffentlicht. Hört ihn euch an und lasst mich wissen, wie er euch gefällt!",
-                date: "2025-01-15",
-                links: [
-                    { url: "https://spotify.rosenrausch.xyz", text: "Auf Spotify anhören", icon: "fab fa-spotify" },
-                    { url: "https://applemusik.rosenrausch.xyz", text: "Auf Apple Music", icon: "fab fa-apple" }
-                ]
-            },
-            {
-                id: 2,
-                title: "Community Event geplant",
-                content: "Bald gibt es ein großes Community Event! Weitere Details folgen in den nächsten Tagen. Bleibt dran!",
-                date: "2025-01-10",
-                links: [
-                    { url: "/termine", text: "Alle Termine ansehen", icon: "fas fa-calendar" }
-                ]
-            },
-            {
-                id: 3,
-                title: "Discord Server Update",
-                content: "Der Discord Server hat neue Channels und Features bekommen. Schaut vorbei und entdeckt die Neuerungen!",
-                date: "2025-01-05",
-                links: [
-                    { url: "https://discord.rosenrausch.xyz", text: "Discord beitreten", icon: "fab fa-discord" }
-                ]
+        try {
+            // Fetch news data from JSON file with cache busting
+            const cacheBuster = new Date().getTime();
+            const response = await fetch(`data/news.json?v=${cacheBuster}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        ];
+            
+            const data = await response.json();
+            
+            // Sort news by date (newest first) and take only first 3
+            this.allNews = data.news
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 3); // Force only 3 news items
+            
+            // Store categories and metadata for potential future use
+            this.categories = data.categories || [];
+            this.metadata = data.meta || {};
+            
+        } catch (error) {
+            console.error('Error loading news from JSON:', error);
+            
+            // Fallback to basic news items if JSON loading fails
+            this.allNews = [
+                {
+                    id: 1,
+                    title: "Willkommen bei Rosenrausch!",
+                    content: "News werden geladen... Falls du diese Nachricht siehst, überprüfe deine Internetverbindung.",
+                    date: new Date().toISOString().split('T')[0],
+                    category: "general",
+                    links: []
+                }
+            ];
+            
+            throw error; // Re-throw to be handled by init()
+        }
     }
     
     displayNews() {
@@ -65,30 +74,47 @@ class NewsLoader {
         
         this.newsContainer.innerHTML = '';
         
-        const newsToShow = this.allNews.slice(0, this.itemsPerPage * this.currentPage);
+        // Ensure only the first 3 news items are shown on main page
+        const newsToShow = this.allNews.slice(0, 3);
+        
+        console.log(`Displaying ${newsToShow.length} news items on main page`);
         
         newsToShow.forEach((news, index) => {
             const newsElement = this.createNewsElement(news, index);
             this.newsContainer.appendChild(newsElement);
         });
         
-        // Add "Show more" button if there are more news
-        if (this.allNews.length > this.itemsPerPage * this.currentPage) {
-            this.addShowMoreButton();
-        }
+        // Add "View all news" button pointing to news.html
+        this.addViewAllNewsButton();
     }
     
     createNewsElement(news, index) {
         const newsItem = document.createElement('div');
         newsItem.className = 'news-item';
+        if (news.featured) {
+            newsItem.classList.add('featured');
+        }
         newsItem.style.animationDelay = `${index * 0.1}s`;
+        
+        // Get category info
+        const category = this.getCategoryInfo(news.category);
+        
+        let categoryHtml = '';
+        if (category) {
+            categoryHtml = `
+                <div class="news-category" style="color: ${category.color}">
+                    <i class="${category.icon}"></i>
+                    <span>${category.name}</span>
+                </div>
+            `;
+        }
         
         let linksHtml = '';
         if (news.links && news.links.length > 0) {
             linksHtml = `
                 <div class="news-links">
                     ${news.links.map(link => `
-                        <a href="${link.url}" target="_blank" class="news-link-button">
+                        <a href="${link.url}" ${link.url.startsWith('http') ? 'target="_blank"' : ''} class="news-link-button">
                             <i class="${link.icon}"></i>
                             <span>${link.text}</span>
                         </a>
@@ -98,7 +124,10 @@ class NewsLoader {
         }
         
         newsItem.innerHTML = `
-            <div class="news-date">${this.formatDate(news.date)}</div>
+            <div class="news-header">
+                <div class="news-date">${this.formatDate(news.date)}</div>
+                ${categoryHtml}
+            </div>
             <h3 class="news-item-title">${news.title}</h3>
             <p class="news-content">${news.content}</p>
             ${linksHtml}
@@ -107,29 +136,33 @@ class NewsLoader {
         return newsItem;
     }
     
-    addShowMoreButton() {
+    addViewAllNewsButton() {
         const existingButton = document.querySelector('.news-show-more');
         if (existingButton) existingButton.remove();
         
-        const showMoreButton = document.createElement('div');
-        showMoreButton.className = 'news-show-more';
-        showMoreButton.innerHTML = `
+        const viewAllButton = document.createElement('div');
+        viewAllButton.className = 'news-show-more';
+        viewAllButton.innerHTML = `
             <button class="show-more-btn">
                 <i class="fas fa-chevron-down"></i>
                 Ältere News anzeigen
             </button>
         `;
         
-        showMoreButton.querySelector('button').addEventListener('click', () => {
-            this.loadMoreNews();
+        // Add click handler to redirect to news.html
+        const button = viewAllButton.querySelector('.show-more-btn');
+        button.addEventListener('click', () => {
+            window.location.href = 'news.html';
         });
         
-        this.newsContainer.appendChild(showMoreButton);
+        this.newsContainer.appendChild(viewAllButton);
     }
     
-    loadMoreNews() {
-        this.currentPage++;
-        this.displayNews();
+    // loadMoreNews function removed - now using dedicated news.html page
+    
+    getCategoryInfo(categoryId) {
+        if (!this.categories || !categoryId) return null;
+        return this.categories.find(cat => cat.id === categoryId);
     }
     
     formatDate(dateString) {
@@ -152,6 +185,47 @@ class NewsLoader {
             </div>
         `;
     }
+    
+    // Additional utility methods
+    filterByCategory(categoryId) {
+        if (!categoryId || categoryId === 'all') {
+            return this.allNews;
+        }
+        return this.allNews.filter(news => news.category === categoryId);
+    }
+    
+    getFeaturedNews() {
+        return this.allNews.filter(news => news.featured);
+    }
+    
+    getRecentNews(count = 3) {
+        return this.allNews.slice(0, count);
+    }
+    
+    refreshNews() {
+        this.currentPage = 1;
+        this.displayedNews = [];
+        this.init();
+    }
+    
+    // Error handling and retry mechanism
+    async retryLoadNews(maxRetries = 3) {
+        for (let i = 0; i < maxRetries; i++) {
+            try {
+                await this.loadNews();
+                return true;
+            } catch (error) {
+                console.warn(`News loading attempt ${i + 1} failed:`, error);
+                if (i === maxRetries - 1) {
+                    console.error('All news loading attempts failed');
+                    return false;
+                }
+                // Wait before retry (exponential backoff)
+                await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+            }
+        }
+        return false;
+    }
 }
 
 // Add news-specific styles
@@ -166,17 +240,49 @@ const newsStyles = `
         animation: fadeInUp 0.8s ease-out;
     }
     
+    .news-item.featured {
+        border-left: 4px solid #FFD700;
+        background: rgba(255, 215, 0, 0.1);
+    }
+    
     .news-item:hover {
         transform: translateX(5px);
         background: rgba(168, 85, 247, 0.15);
         border-left-color: rgba(168, 85, 247, 0.6);
     }
     
+    .news-item.featured:hover {
+        background: rgba(255, 215, 0, 0.15);
+        border-left-color: #FFD700;
+    }
+    
+    .news-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
     .news-date {
         color: #A855F7;
         font-size: 0.9rem;
-        margin-bottom: 10px;
         font-weight: 500;
+    }
+    
+    .news-category {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
     }
     
     .news-item-title {
@@ -184,6 +290,7 @@ const newsStyles = `
         font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 15px;
+        margin-top: 0;
     }
     
     .news-content {

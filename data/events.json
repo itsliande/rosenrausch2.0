@@ -1,0 +1,152 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Community Livestream",
+      "date": "2025-02-15",
+      "time": "20:00",
+      "location": "Twitch & TikTok",
+      "description": "Ein entspannter Livestream mit der Community. Wir spielen Spiele, beantworten Fragen und haben eine gute Zeit zusammen!",
+      "type": "livestream",
+      "isPast": false,
+      "featured": true,
+      "links": [
+        {
+          "url": "https://tiktok.rosenrausch.xyz",
+          "text": "TikTok Live",
+          "type": "primary"
+        },
+        {
+          "url": "https://discord.rosenrausch.xyz",
+          "text": "Discord beitreten",
+          "type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Neues Musikvideo Premiere",
+      "date": "2025-02-22",
+      "time": "19:00",
+      "location": "YouTube & Social Media",
+      "description": "Die Premiere meines neuesten Musikvideos! Seid dabei wenn es live geht und feiert mit mir.",
+      "type": "premiere",
+      "isPast": false,
+      "featured": true,
+      "links": [
+        {
+          "url": "https://spotify.rosenrausch.xyz",
+          "text": "Spotify",
+          "type": "primary"
+        },
+        {
+          "url": "https://applemusik.rosenrausch.xyz",
+          "text": "Apple Music",
+          "type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Minecraft Community Build",
+      "date": "2025-03-01",
+      "time": "16:00",
+      "location": "Minecraft Server",
+      "description": "Gemeinsames Bauprojekt auf dem Minecraft Server. Alle sind eingeladen mitzuhelfen!",
+      "type": "gaming",
+      "isPast": false,
+      "featured": false,
+      "links": [
+        {
+          "url": "minecraft.html",
+          "text": "Server Info",
+          "type": "primary"
+        },
+        {
+          "url": "https://discord.rosenrausch.xyz",
+          "text": "Discord",
+          "type": "secondary"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Community Event - Gaming Session",
+      "date": "2024-12-15",
+      "time": "18:00",
+      "location": "Minecraft Server",
+      "description": "Ein gemeinsames Gaming Event auf unserem Minecraft Server. Es war ein großartiger Abend mit der Community!",
+      "type": "gaming",
+      "isPast": true,
+      "featured": false,
+      "links": []
+    },
+    {
+      "id": 5,
+      "title": "Weihnachts-Special Livestream",
+      "date": "2024-12-24",
+      "time": "20:00",
+      "location": "TikTok Live",
+      "description": "Ein besonderer Weihnachts-Livestream mit Musik, Geschichten und Community-Zeit.",
+      "type": "livestream",
+      "isPast": true,
+      "featured": false,
+      "links": []
+    },
+    {
+      "id": "community-event-2025",
+      "title": "Community Event 2025",
+      "date": "2025-07-15",
+      "time": "18:00",
+      "location": "Discord & Live",
+      "description": "Ein großes Community Event mit Spielen, Musik und tollen Überraschungen! Alle sind herzlich eingeladen.",
+      "type": "meetup",
+      "isPast": false,
+      "featured": true,
+      "links": [
+        {
+          "url": "https://discord.rosenrausch.xyz",
+          "text": "Discord beitreten",
+          "type": "primary"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "id": "livestream",
+      "name": "Livestream",
+      "icon": "fas fa-video",
+      "color": "#A855F7"
+    },
+    {
+      "id": "premiere",
+      "name": "Premiere",
+      "icon": "fas fa-star",
+      "color": "#FFD700"
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming Event",
+      "icon": "fas fa-gamepad",
+      "color": "#22C55E"
+    },
+    {
+      "id": "concert",
+      "name": "Konzert",
+      "icon": "fas fa-music",
+      "color": "#EC4899"
+    },
+    {
+      "id": "meetup",
+      "name": "Community Meetup",
+      "icon": "fas fa-users",
+      "color": "#8B5CF6"
+    }
+  ],
+  "meta": {
+    "lastUpdated": "2025-01-15",
+    "version": "1.0",
+    "timezone": "Europe/Berlin"
+  }
+}

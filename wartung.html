@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wartung - Rosenrausch</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Wartungsarbeiten bei Rosenrausch - Wir sind bald wieder da!">
+    <meta name="keywords" content="Rosenrausch, Wartung, Maintenance, Website">
+    <meta name="author" content="Rosenrausch">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/rosenrausch-performer.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/rosenrausch-performer.svg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#A855F7">
+    <meta name="msapplication-TileColor" content="#A855F7">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .maintenance-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 140px);
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            background: rgba(26, 16, 51, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maintenance-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+        }
+
+        .icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            color: #E9D5FF;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+            background: linear-gradient(45deg, #E9D5FF, #A855F7, #E9D5FF);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #9F7AEA;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .message {
+            color: #E9D5FF;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .apology {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #C4B5FD;
+        }
+
+        .contact-info {
+            font-size: 1rem;
+            color: #9F7AEA;
+            margin-top: 2rem;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-container {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="termine.html" class="nav-link">
+                        <span>Termine</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="minecraft.html" class="nav-link">
+                        <span>Minecraft</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tiktok.html" class="nav-link">
+                        <span>TikTok</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="maintenance-container">
+        <div class="icon">🔧</div>
+        <h1>Wartungsarbeiten</h1>
+        <h2>Diese Seite ist momentan nicht erreichbar</h2>
+
+        <div class="message">
+            <p>Aufgrund des Neuaufbaus unserer Website sind wir derzeit nicht verfügbar.
+                Wir arbeiten daran, Ihnen ein noch besseres Erlebnis zu bieten.</p>
+        </div>
+
+        <div class="apology">
+            <strong>Wir bitten um Entschuldigung für die Unannehmlichkeiten.</strong>
+        </div>
+
+        <div class="contact-info">
+            <p>Vielen Dank für Ihr Verständnis.<br>
+                Wir sind bald wieder für Sie da!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Rosenrausch. Alle Rechte vorbehalten.
+        <div class="legal-links">
+            <a href="impressum.html">Impressum</a> |
+            <a href="privacy.html">Datenschutz</a>
+        </div>
+    </div>
+
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

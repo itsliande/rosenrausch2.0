@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Validation Test - Rosenrausch</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .test-results {
+            background: rgba(26, 16, 51, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            color: #E9D5FF;
+            min-height: 400px;
+        }
+        
+        .run-tests-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #E9D5FF;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .run-tests-btn:hover {
+            background: rgba(168, 85, 247, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .data-files-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .data-file-card {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .data-file-card h3 {
+            color: #A855F7;
+            margin-bottom: 10px;
+        }
+        
+        .data-file-card p {
+            color: #E9D5FF;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="team.html" class="nav-item">Team</a>
+        <a href="termine.html" class="nav-item">Termine</a>
+        <a href="minecraft.html" class="nav-item">Minecraft</a>
+    </nav>
+
+    <div class="test-container">
+        <div class="test-header">
+            <h1 class="page-title">Data Validation Test</h1>
+            <p class="page-subtitle">Überprüfung aller JSON-Datendateien</p>
+        </div>
+
+        <div class="data-files-list">
+            <div class="data-file-card">
+                <h3>📰 news.json</h3>
+                <p>News-Artikel und Kategorien</p>
+            </div>
+            <div class="data-file-card">
+                <h3>👥 team.json</h3>
+                <p>Team-Mitglieder und Rollen</p>
+            </div>
+            <div class="data-file-card">
+                <h3>📅 events.json</h3>
+                <p>Events und Termine</p>
+            </div>
+            <div class="data-file-card">
+                <h3>🎮 minecraft.json</h3>
+                <p>Minecraft Server Daten</p>
+            </div>
+            <div class="data-file-card">
+                <h3>💬 quotes.json</h3>
+                <p>Zitate und Sprüche</p>
+            </div>
+            <div class="data-file-card">
+                <h3>⚙️ config.json</h3>
+                <p>Allgemeine Konfiguration</p>
+            </div>
+        </div>
+
+        <button class="run-tests-btn" onclick="runDataTests()">
+            🔍 Tests ausführen
+        </button>
+
+        <div class="test-results" id="test-results">
+Klicke auf "Tests ausführen" um die Datenvalidierung zu starten...
+
+🔍 Diese Seite überprüft:
+✓ Ob alle JSON-Dateien korrekt geladen werden können
+✓ Ob die erforderlichen Felder vorhanden sind
+✓ Ob die Datenstrukturen gültig sind
+✓ Ob alle Referenzen korrekt sind
+
+📊 Die Testergebnisse werden hier angezeigt.
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Rosenrausch. Alle Rechte vorbehalten.
+        <div class="legal-links">
+            <a href="privacy.html">Datenschutz</a> |
+            <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <script src="js/data-tester.js"></script>
+    <script>
+        // Override console.log to display in the results area
+        const originalConsoleLog = console.log;
+        const resultsElement = document.getElementById('test-results');
+        
+        console.log = function(...args) {
+            originalConsoleLog.apply(console, args);
+            const message = args.join(' ') + '\n';
+            resultsElement.textContent += message;
+        };
+
+        async function runDataTests() {
+            resultsElement.textContent = '';
+            console.log('🚀 Starte Datenvalidierung...\n');
+            
+            const tester = new DataTester();
+            await tester.testAllDataFiles();
+        }
+
+        // Clear results when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            resultsElement.textContent = `Klicke auf "Tests ausführen" um die Datenvalidierung zu starten...
+
+🔍 Diese Seite überprüft:
+✓ Ob alle JSON-Dateien korrekt geladen werden können
+✓ Ob die erforderlichen Felder vorhanden sind  
+✓ Ob die Datenstrukturen gültig sind
+✓ Ob alle Referenzen korrekt sind
+
+📊 Die Testergebnisse werden hier angezeigt.`;
+        });
+    </script>
+</body>
+</html>

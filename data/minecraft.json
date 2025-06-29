@@ -1,0 +1,131 @@
+{
+  "server": {
+    "name": "Rosenrausch Minecraft Server",
+    "ip": "play.rosenrausch.de",
+    "port": 25565,
+    "version": "1.20.4",
+    "type": "survival",
+    "maxPlayers": 50,
+    "description": "Erlebe Minecraft mit der Rosenrausch Community! Unser Survival-Server bietet eine freundliche Atmosphäre für Baumeister und Abenteurer.",
+    "features": [
+      {
+        "name": "Survival Mode",
+        "icon": "fas fa-heart",
+        "description": "Klassischer Survival-Modus"
+      },
+      {
+        "name": "Claims System",
+        "icon": "fas fa-home",
+        "description": "Schütze dein Gebiet"
+      },
+      {
+        "name": "Player Shops",
+        "icon": "fas fa-shopping-cart",
+        "description": "Handele mit anderen Spielern"
+      },
+      {
+        "name": "Anti-Grief",
+        "icon": "fas fa-shield-alt",
+        "description": "Schutz vor Griefing"
+      },
+      {
+        "name": "Community Events",
+        "icon": "fas fa-calendar",
+        "description": "Regelmäßige Events"
+      },
+      {
+        "name": "Discord Integration",
+        "icon": "fab fa-discord",
+        "description": "Verbunden mit Discord"
+      }
+    ]
+  },
+  "discord": {
+    "name": "Rosenrausch Discord Server",
+    "invite": "https://discord.rosenrausch.xyz",
+    "description": "Tritt unserem Discord Server bei und werde Teil der Rosenrausch Community! Hier findest du alle Infos zu Events, kannst mit anderen Fans chatten und bekommst exklusive Updates.",
+    "features": [
+      {
+        "name": "Community Chat",
+        "icon": "fas fa-comments",
+        "description": "Chatte mit der Community"
+      },
+      {
+        "name": "Event Updates",
+        "icon": "fas fa-calendar",
+        "description": "Erhalte Event-Benachrichtigungen"
+      },
+      {
+        "name": "Musik Updates",
+        "icon": "fas fa-music",
+        "description": "Neue Musik zuerst hören"
+      },
+      {
+        "name": "Gaming Channels",
+        "icon": "fas fa-gamepad",
+        "description": "Gaming mit der Community"
+      },
+      {
+        "name": "Voice Channels",
+        "icon": "fas fa-microphone",
+        "description": "Sprachkanäle verfügbar"
+      },
+      {
+        "name": "Exclusive Content",
+        "icon": "fas fa-star",
+        "description": "Exklusive Inhalte für Mitglieder"
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "respect",
+      "title": "Respekt & Freundlichkeit",
+      "icon": "fas fa-handshake",
+      "description": "Behandle alle Community-Mitglieder mit Respekt und Freundlichkeit.",
+      "details": "Beleidigungen, Hassrede oder diskriminierende Sprache werden nicht toleriert."
+    },
+    {
+      "id": "no-griefing",
+      "title": "Kein Griefing",
+      "icon": "fas fa-ban",
+      "description": "Das Zerstören oder Stehlen von anderen Spielern ist strengstens verboten.",
+      "details": "Respektiere die Builds und Gegenstände anderer Spieler."
+    },
+    {
+      "id": "language",
+      "title": "Angemessene Sprache",
+      "icon": "fas fa-comments",
+      "description": "Verwende eine angemessene Sprache und vermeide Spam oder Beleidigungen.",
+      "details": "Halte den Chat sauber und familienfreundlich."
+    },
+    {
+      "id": "fair-play",
+      "title": "Fair Play",
+      "icon": "fas fa-balance-scale",
+      "description": "Cheating, Hacking oder unfaire Vorteile sind nicht erlaubt.",
+      "details": "Spiele fair und verwende keine Mods oder Hacks, die dir unfaire Vorteile verschaffen."
+    },
+    {
+      "id": "help",
+      "title": "Hilfsbereitschaft",
+      "icon": "fas fa-helping-hand",
+      "description": "Helfe neuen Spielern und sei freundlich zu allen.",
+      "details": "Unsere Community basiert auf Hilfsbereitschaft und Freundlichkeit."
+    }
+  ],
+  "status": {
+    "lastChecked": "2025-01-15T10:00:00Z",
+    "online": true,
+    "players": {
+      "current": 12,
+      "max": 50
+    },
+    "motd": "Willkommen auf dem Rosenrausch Server!",
+    "latency": 25
+  },
+  "meta": {
+    "lastUpdated": "2025-01-15",
+    "version": "1.0"
+  }
+}
